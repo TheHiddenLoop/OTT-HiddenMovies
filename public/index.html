@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiddenMovies - Free Movie Downloads</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">HiddenMovies</div>
+        <div class="searcch">
+            <input type="text" id="query" placeholder="Search movies...">
+            <button id="search-btn">Search</button>
+        </div>
+    </header>
+    
+    <div class="navbar-container">
+        <div class="nav-row">
+            <a href="#" class="nav-button">Bollywood Movies</a>
+            <a href="#" class="nav-button">South (Hindi Dubbed)</a>
+            <a href="#" class="nav-button">Hindi Movies</a>
+            <a href="#" class="nav-button">Action Movies</a>
+            <a href="#" class="nav-button">Crime</a>
+            <a href="#" class="nav-button">Thriller</a>
+            <a href="#" class="nav-button">Horror</a>
+            <a href="#" class="nav-button">Comedy</a>
+            <a href="#" class="nav-button">Anime</a>
+        </div>
+
+        <div class="nav-row">
+            <a href="#" class="nav-button">Most Popular</a>
+            <a href="#" class="nav-button">Reviews</a>
+        </div>
+    </div>
+
+    <div class="con-bor">
+        <div class="areaborder">Visit in my <span>HiddenMovies</span> for free watch and download</div>
+    </div>
+
+    <section>
+        <div class="card-container" id="cards">
+            <!-- Cards will be loaded here -->
+        </div>
+        
+        <div class="pagination-container">
+            <button id="prev-btn" class="pagination-btn" disabled>Previous</button>
+            <div class="page-info">
+                <span id="page-info">Page 1 of 1</span>
+            </div>
+            <button id="next-btn" class="pagination-btn" disabled>Next</button>
+        </div>
+        
+        <div id="loading" class="loading-container" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Loading movies...</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

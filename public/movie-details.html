@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiddenMovies-Moviedetails</title>
+    <link rel="stylesheet" href="moviedetails.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">HiddenMovies</div>
+    </header>
+    <div class="container">
+        <div class="title" id="movie-title">Loading...</div>
+        <div class="description">
+            <h3 id="movie-description">Loading...</h3>
+        </div>
+
+        <div class="anime-info">
+            <img id="movie-poster" src="" alt="Loading...">
+            <div class="anime-text">
+                <p><strong>Release Date:</strong> <span id="release-date">Loading...</span></p>
+                <p><strong>Summary:</strong> <span id="summary">Loading...</span></p>
+                <p><strong>Country:</strong> <span id="country">Loading...</span></p>
+                <p><strong>Languages:</strong> <span id="languages">Loading...</span></p>
+            </div>
+        </div>
+
+        <div class="series-details">
+            <h2 class="green">Series Details:</h2>
+            <p><strong>Movie Name:</strong> <span id="full-name">Loading...</span></p>
+            <p><strong>Language:</strong> <span id="multi-audio">Loading...</span></p>
+            <p><strong>Released Year:</strong> <span id="released-year">Loading...</span></p>
+            <p><strong>Size:</strong> <span id="size">Loading...</span></p>
+            <p><strong>Quality:</strong> <span id="quality">Loading...</span></p>
+            <p><strong>Source:</strong> <span id="source">Loading...</span></p>
+            <p><strong>Genres:</strong> <span id="genres">Loading...</span></p>
+            <p><strong>Cast:</strong> <span id="cast">Loading...</span></p>
+            <p><strong>Format:</strong> <span id="format">Loading...</span></p>
+            <p><strong>Subtitle:</strong> <span id="subtitle">Loading...</span></p>
+        </div>
+
+        <div class="details">
+            <h2 class="green">Storyline:</h2>
+            <p id="storyline">Loading...</p>
+        </div>
+
+        <div class="screenshots">
+            <h2 class="green">Screenshots:</h2>
+            <img id="screenshot1" src="" alt="Loading...">
+            <img id="screenshot2" src="" alt="Loading...">
+            <img id="screenshot3" src="" alt="Loading...">
+        </div>
+
+        <div class="download-section">
+            <div class="download-item">
+                <button class="download-button">Download or Watch</button>
+            </div>
+        </div>
+
+
+        <!-- COMMENT BOX SECTION -->
+        <div class="comment-box">
+            <h2>ADD COMMENT</h2>
+            <form id="commentForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="5e207772-53e3-497c-8a88-f938eb6a5f75">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Comment:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                <button type="submit">Submit Form</button>
+            </form>
+        </div>
+        <!-- COMMENT BOX SECTION ENDS HERE -->
+    </div>
+    <script src="movieDetails.js"></script>
+</body>
+
+</html>

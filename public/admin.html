@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HiddenMovies - Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>HiddenMovies</h3>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="nav-item active" data-target="upload-movie-section">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-upload"></i> Upload Movie
+                    </a>
+                </li>
+                <li class="nav-item" data-target="delete-movie-section">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-trash-alt"></i> Delete Movie
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            <section id="upload-movie-section" class="content-section active">
+                <form id="uploadMovieForm" class="form-container" enctype="multipart/form-data">
+                    <h2>Upload Movie</h2>
+
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="text" id="genre" name="genre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="release_date">Release Date</label>
+                        <input type="date" id="release_date" name="release_date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="summary">Summary</label>
+                        <textarea id="summary" name="summary" rows="2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="storyline">Storyline</label>
+                        <textarea id="storyline" name="storyline" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="languages">Languages</label>
+                        <input type="text" id="languages" name="languages" placeholder="comma-separated">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formats">Formats</label>
+                        <select id="formats" name="formats" required>
+                            <option value="">Select Format</option>
+                            <option value="HD">HD</option>
+                            <option value="SD">SD</option>
+                            <option value="4K">4K</option>
+                            <option value="Blu-ray">Blu-ray</option>
+                            <option value="DVD">DVD</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quality">Quality</label>
+                        <select id="quality" name="quality" required>
+                            <option value="">Select Quality</option>
+                            <option value="1080p">1080p</option>
+                            <option value="720p">720p</option>
+                            <option value="480p">480p</option>
+                            <option value="CAM">CAM</option>
+                            <option value="HDRip">HDRip</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subtitle">Subtitle</label>
+                        <input type="text" id="subtitle" name="subtitle">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="size">Size</label>
+                        <input type="text" id="size" name="size" placeholder="e.g., 1.5GB">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cast">Cast</label>
+                        <input type="text" id="cast" name="cast" placeholder="comma-separated">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Poster Image</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="video">Movie File</label>
+                        <input type="file" id="video" name="video" accept="video/*" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="screenshots">Screenshots</label>
+                        <input type="file" id="screenshots" name="screenshots" accept="image/*" multiple>
+                    </div>
+
+                    <button type="submit" class="btn">Upload Movie</button>
+                </form>
+            </section>
+
+            <section id="delete-movie-section" class="content-section">
+                <h2>Delete Movies</h2>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search movies...">
+                    <button onclick="searchMovies()"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="table-container">
+                    <table id="movieTable">
+                        <thead>
+                            <tr>
+                              <th>Movie ID</th>
+                                <th>Title</th>
+                                <th>Upload Date</th>
+                                <th>Genre</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="5" class="loading-message">Loading movies...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
